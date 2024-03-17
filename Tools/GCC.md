@@ -1,9 +1,10 @@
 
+GCC HandBook 
+
 This is a Hand Book For GUN GCC compiler And GNU Tool Chains! 
 
 
 You can follow each Parts in the GCC Compiler !
-
 
 
 ### Basic Rules
@@ -19,10 +20,10 @@ $ gcc <flags> <c-files> -o <executable-name>
 1. -Wall  
 - One of the most common flags is the `-Wall` flag. It will cause the compiler to warn you about technically legal but potentially problematic syntax
 
-1. -Werror
+2. -Werror
 - The `-Werror` flag forces the compiler to treat all compiler warnings as errors, meaning that your code won’t be compiled until you fix the errors. This may seem annoying at first, but in the long run, it can save you lots of time by forcing you to take a look at potentially problematic code
 
-1. -Weatra
+3. -Weatra
 - This flag adds a few more warnings (which will appear as errors thanks to `-Werror`, but are not covered by -Wall. Some problems that `-Wextra` will warn you about
 
 Some Debugging Sanitizers
