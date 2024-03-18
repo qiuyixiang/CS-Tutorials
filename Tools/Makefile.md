@@ -12,6 +12,38 @@ A Makefile Some This Basic Properties
 ```
 
 
+This is a usually Used Template for multi-file compilation
+```Makefile
+GCC = gcc
+FLAGS = -Wall -Werror -Wextra -O0
+
+PROGRAM = task1 task2
+ALLPROGRAM = $(PROGRAM)
+all : $(ALLPROGRAM)
+
+
+%.o : %.c
+
+$(GCC) $(FLAGS) -c $< -o $@
+
+  
+task1 : task1.o
+
+$(GCC) $(FLAGS) $< -o $@
+
+  
+task2 : task2.o
+
+$(GCC) $(FLAGS) $< -o $@
+
+
+clean :
+
+rm -f *.o
+
+
+.PYONY : all clean
+```
 
 #### Variables
 
