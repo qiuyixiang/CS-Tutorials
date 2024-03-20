@@ -30,6 +30,7 @@ There are different layouts in gdb
 - layout split <>   This command can split with other layout 
 eg : `layout split asm`
 
+
 #### Run Programming
 
 To commence execution, you can use the command run followed by any arguments that might be required to run the program
@@ -66,3 +67,13 @@ These Commands will delete breakpoints
 (gdb) [d]elete 1  (delete breakpoint 1)
 (gdb) [d]elete  (delete all breakpoints)
 ```
+
+#### Information
+
+Using A backtrace is a summary of how your program got where it is. It prints a stack trace starting from the current frame of execution
+
+```shell
+(gdb) [b]ack[t]race (display stack backtrace)
+```
+
+Using `p command` To print some variables and other namespace in the environment !
