@@ -3,7 +3,6 @@ GNU Toolchain HandBook
 
 This is a Hand Book For GUN GCC compiler And GNU Tool Chains! 
 
-
 You can follow each Parts in the GCC Compiler !
 
 
@@ -29,8 +28,9 @@ $ gcc <flags> <c-files> -o <executable-name>
 - This flag adds a few more warnings (which will appear as errors thanks to `-Werror`, but are not covered by -Wall. Some problems that `-Wextra` will warn you about
 
 #### Debugger Flags 
-
+----------
 ##### Sanitizers
+
 Some Debugging Sanitizers
 
 1. -fsanitizer = address
@@ -70,7 +70,7 @@ Here is a list of common ASAN errors:
 
 	Same as above, but for global (static lifetime) variables.
 
-5. SEGV on unknown address
+5. **SEGV on unknown address**
 
 	_Reason:_ Your code dereferenced something as an address that isn’t a valid address in this program. Commonly involves address 0x0, the NULL pointer.
 	
