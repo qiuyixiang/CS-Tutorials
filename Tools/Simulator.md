@@ -58,6 +58,9 @@ display_library: sdl2
 
 #### Example
 
+> Warning : Because different Bits-Mode will generate different binary code So When Using bochs Magic Break Point Make Sure That you are using `xchg bx, bx `rather than 32-bit `xchg ebx, ebx`In this special case bochs's Magic Point will not work appropriately !!!
+
+
 This is the easiest test sample to test your configuration of bochs
 
 This Example Only For Intel style (NASM) ! And Using NASM Assembler !

@@ -8,10 +8,7 @@ You can follow each Parts in the GCC Compiler !
 
 ### GCC
 
-#### Basic Utility
-
 The gcc compiler supports the use of hundreds of different flags, which we can use to customize the compilation process. Flags, typically prefixed by a dash or two (`-<flag>` or `--<flag>`), can help us in many ways from warning us about programming errors to optimizing our code so that it runs faster.
-
 
 General Type
 ```shell
@@ -26,6 +23,9 @@ $ gcc <flags> <c-files> -o <executable-name>
 
 3. -Weatra
 - This flag adds a few more warnings (which will appear as errors thanks to `-Werror`, but are not covered by -Wall. Some problems that `-Wextra` will warn you about
+
+4. -v (--verbose)
+- display all compilation details
 
 #### Debugger Flags 
 ----------
@@ -116,8 +116,25 @@ Here is a list of common ASAN errors:
 In addition to flags that let you know about problems in your code, there are also optimization flags that will speed up the runtime of your code at the cost of longer compilation times. Higher optimization levels will optimize by running analyses on your program to determine if the compiler can make certain changes that improve its speed. The higher the optimization level, the longer the compiler will take to compile the program, because it performs more sophisticated analyses on your program. These are the capital `O` flags, which include `-O0`, `-O1`, `-O2`, `-O3`, and `-Os`
 
 
+### AS
+
+As is a assembler for GNU ! It generate Object File ! It also have some special features and flags !
+
+Input :                 Assembly Code File
+Output :              Binary Object File 
+#### Format 
+
+There are some different Flags for output format !
+
+Notice : If you want to generate Intel style Assembly, you can use `gcc -masn=intel` flag, but `as` don't support this command !
+
+- --32/--64/--x32         generate 32bit/64bit/x32 object
+
+### LD
+
 ### Objdump
 
+Objdump is a disassembler Tool, It will transfer binary file to assembly code . Note : The file must be obj format or elf format !
 
 
 
@@ -128,10 +145,16 @@ In addition to flags that let you know about problems in your code, there are al
 ### Linker
 
 
+### NASM 
+
+NASM is a excellent Assembler Mainly used for x86 assembly language ! It is not belong to GNU but is a useful tool for compile your Assembly File !
+
+
 
 ### Other Tools
 
 #### File Content
+
 To check the contents of a binary (non-text) file, we recommend a _hexdump_ tool like xxd
 ```shell
 xxd <file name>
