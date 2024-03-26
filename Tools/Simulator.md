@@ -55,6 +55,10 @@ config_interface: textconfig
 display_library: sdl2
 ```
 
+##### Windows
+
+
+##### Linux
 
 #### Example
 

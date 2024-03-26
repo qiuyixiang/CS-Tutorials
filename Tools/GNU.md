@@ -132,6 +132,7 @@ Notice : If you want to generate Intel style Assembly, you can use `gcc -masn=in
 
 ### LD
 
+
 ### Objdump
 
 ------------
@@ -170,7 +171,11 @@ There are some useful flags in Objdump :
 
 - -D option displays assembly contents of all sections.
 
+- -z display all zero bytes
+
 - -S option display both source code and assembly code, but must be compiled with `-g` flag 
+
+- -j --section=NAME             Only display information for section NAME
 
 - -M option change the output format file of assembly code 
 
@@ -201,7 +206,13 @@ There are some useful flags in Objdump :
 
 ### Readelf
 
+Readelf Can Print Some Information about ELF Format File ! The Functionality of this function is similar with Objdump. But they also have some difference !
 
+
+#### Flags
+There are some common Flags in Readelf
+
+- -x  (section name)  Dump the contents of section <number|name> as bytes
 
 ### Linker
 
@@ -212,11 +223,11 @@ NASM is a excellent Assembler Mainly used for x86 assembly language ! It is not 
 
 #### Basic Rules
 
-
 ```shell
 nasm -f bin test.asm -o test
 ```
 -f option specifies the file format, e.g. ELF, of the final output file. But in this case, the format is bin, which means this file is just a flat binary output without any extra information. That is, the written assembly code is translated to machine code as is, without the overhead of the metadata from file format like ELF. Indeed, after compiling, we can examine the output using this command:
+
 ```shell
 hd test
 ```
