@@ -210,6 +210,41 @@ There are some useful flags in Objdump :
 
 NASM is a excellent Assembler Mainly used for x86 assembly language ! It is not belong to GNU but is a useful tool for compile your Assembly File !
 
+#### Basic Rules
+
+
+```shell
+nasm -f bin test.asm -o test
+```
+-f option specifies the file format, e.g. ELF, of the final output file. But in this case, the format is bin, which means this file is just a flat binary output without any extra information. That is, the written assembly code is translated to machine code as is, without the overhead of the metadata from file format like ELF. Indeed, after compiling, we can examine the output using this command:
+```shell
+hd test
+```
+hd (short for hexdump) is a program that displays the content of a file in hex format. And get the following output
+
+> Nots : That Nasm Generate 16 bits code by default, if you want to generate 32-bit code you must add some macro instructions 
+```shell
+bits 32
+```
+
+
+#### Flags
+Some Flags In NASM
+
+- -f option specifies the output file format 
+	bin                  Flat raw binary (MS-DOS, embedded, ...) default 16-bits
+	
+	ith                  Intel Hex encoded flat binary
+	
+	elf32                ELF32 (i386) (Linux, most Unix variants)
+	elf64                ELF64 (x86-64) (Linux, most Unix variants)
+	elfx32               ELFx32 (ELF32 for x86-64) (Linux)
+	
+	win32                Microsoft extended COFF for Win32 (i386)
+	win64                Microsoft extended COFF for Win64 (x86-64)
+	
+	macho32              Mach-O i386 (Mach, including MacOS X and variants)
+	macho64              Mach-O x86-64 (Mach, including MacOS X and variants)
 
 
 ### Other Tools
