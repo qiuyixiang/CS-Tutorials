@@ -134,9 +134,70 @@ Notice : If you want to generate Intel style Assembly, you can use `gcc -masn=in
 
 ### Objdump
 
+------------
+#### Basic Rules 
+
 Objdump is a disassembler Tool, It will transfer binary file to assembly code . Note : The file must be obj format or elf format !
 
+```shell
+objdump -d hello
+```
 
+-d option only displays assembled contents of executable sections. A section is a block of memory that contains either program code or data.
+
+If we want to Save the output of an objdump file we can use this command 
+```shell
+objdump -d hello | less.hex
+objdump -d hello > dump.hex
+```
+
+
+If We want to Combine source code with assembly code, we must add `-g` flag when compile source code !
+```shell
+gcc -g -O0 -c hello.c -o hello.o
+objdump -S hello.o
+```
+
+The default syntax used by objdump is AT&T syntax. To change it to the familiar Intel syntax:
+```shell
+objdump -M intel -D hello | less
+```
+
+#### Flags 
+There are some useful flags in Objdump : 
+
+- -d option only displays assembled contents of executable sections, disassemble of text section
+
+- -D option displays assembly contents of all sections.
+
+- -S option display both source code and assembly code, but must be compiled with `-g` flag 
+
+- -M option change the output format file of assembly code 
+
+	The following i386/x86-64 specific disassembler options are supported for use
+	with the -M switch (multiple options should be separated by commas):
+	
+	x86-64                   Disassemble in 64bit mode
+	i386                       Disassemble in 32bit mode
+	i8086                     Disassemble in 16bit mode
+	
+	att                         Display instruction in AT&T syntax
+	intel                       Display instruction in Intel syntax
+	
+	att-mnemonic           Display instruction in AT&T mnemonic
+	intel-mnemonic        Display instruction in Intel mnemonic
+	
+	addr64                 Assume 64bit address size
+	addr32                 Assume 32bit address size
+	addr16                 Assume 16bit address size
+	
+	data32                 Assume 32bit data size
+	data16                 Assume 16bit data size
+	
+	suffix                   Always display instruction suffix in AT&T syntax
+	
+	amd64                Display instruction in AMD64 ISA
+	intel64                 Display instruction in Intel64 ISA
 
 ### Readelf
 
