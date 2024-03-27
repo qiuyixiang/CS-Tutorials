@@ -46,6 +46,16 @@ ata0-master: type=disk, path="bochs_vhd.img", mode=flat
 ```
 
 
+#### Flags 
+
+There are some flags in bochs run time configuration
+
+- -q               quick start (skip configuration interface)
+- --help cpu       display supported CPU models and exit
+- -n               no configuration file
+- -f configfile    specify configuration file
+
+
 #### Display Library 
 
 ##### Mac OS

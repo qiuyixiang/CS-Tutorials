@@ -129,7 +129,15 @@ There are some different Flags for output format !
 Notice : If you want to generate Intel style Assembly, you can use `gcc -masn=intel` flag, but `as` don't support this command !
 
 - --32/--64/--x32         generate 32bit/64bit/x32 object
-
+- -march=CPU generate code for CPU 
+	generate code for CPU and EXTENSION, CPU is one of:
+   default, push, pop, generic32, generic64, i386, i486,
+   i586, i686, pentium, pentiumpro, pentiumii,
+   pentiumiii, pentium4, prescott, nocona, core, core2,
+   corei7, iamcu, k6, k6_2, athlon, opteron, k8,
+   amdfam10, bdver1, bdver2, bdver3, bdver4, znver1,
+   znver2, znver3, znver4, btver1, btver2
+   
 ### LD
 
 
